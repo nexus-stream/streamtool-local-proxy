@@ -16,7 +16,7 @@ import (
 
 const (
 	defaultUpstream = "https://project-nexus-stream.web.app/"
-	defaultPort     = 8080
+	defaultPort     = 48151
 )
 
 func main() {
@@ -40,10 +40,10 @@ func main() {
 	}
 
 	fmt.Printf("\nNexus Stream proxy running\n")
-	fmt.Printf("  Upstream: %s\n", *upstream)
-	fmt.Printf("  Local:    http://localhost:%d/\n\n", *port)
-	fmt.Printf("Copy the local URL into your tool.\n")
-	fmt.Printf("Press Ctrl+C — or close this window — to stop.\n\n")
+	// fmt.Printf("  Upstream: %s\n", *upstream)
+	fmt.Printf("  URL:    http://localhost:%d/\n\n", *port)
+	// fmt.Printf("Copy the local URL into your tool.\n")
+	fmt.Printf("Leave this window open while streaming.\n\n")
 
 	srv := &http.Server{Handler: newProxy(target)}
 
