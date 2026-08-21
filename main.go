@@ -39,7 +39,7 @@ func main() {
 	addr := net.JoinHostPort(*host, strconv.Itoa(*port))
 	ln, err := net.Listen("tcp", addr)
 	if err != nil {
-		fatal("could not start on %s: %v", addr, err)
+		fatal("Unable to start. Is there another instance already running?\n\n%v", err)
 	}
 
 	sw := newSwitcher(target)
